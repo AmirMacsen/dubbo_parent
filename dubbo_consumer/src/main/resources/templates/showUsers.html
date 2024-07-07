@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="shortcut icon" href="../resources/favicon.ico"
+      th:href="@{/static/favicon.ico}"/>
+<head>
+    <meta charset="UTF-8">
+    <title>显示用户</title>
+</head>
+<body>
+<table border="1" align="center">
+    <tr>
+        <th>用户 ID</th>
+        <th>用户姓名</th>
+        <th>用户年龄</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="user:${userList}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.age}"></td>
+        <td>
+            <a
+                    th:href="@{/user/preUpdateUser(userid=${user.id})}">修改用户
+            </a>
+            <a
+                    th:href="@{/user/delelteByUserId(userid=${user.id})}">删除用户</a>
+        </td>
+    </tr>
+</table>
+</body>
