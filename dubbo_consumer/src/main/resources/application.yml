@@ -3,7 +3,7 @@ dubbo:
     name: dubbo-consumer
     qos-port: 33333
   registry:
-    address: zookeeper://43.139.72.36:2181
+    address: zookeeper://127.0.0.1:2181
     timeout: 100000
   protocol:
     name: dubbo
